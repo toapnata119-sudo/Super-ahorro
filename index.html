@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Super Ahorro: encuentra productos para tu hogar al mejor precio.">
+  <title>Super Ahorro | Tu compra inteligente</title>
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+  
+  <div class="loading-screen" id="loadingScreen" role="status" aria-label="Cargando Super Ahorro">
+    <div class="loading-content">
+      <img src="assets/logo-super-ahorro.png" alt="Super Ahorro">
+      <p>Preparando tus mejores ofertas...</p>
+      <div class="loading-track"><span></span></div>
+    </div>
+  </div>
+
+  <section class="login-screen" id="loginScreen" aria-labelledby="loginTitle">
+    <div class="login-card">
+      <img class="login-logo" src="assets/logo-super-ahorro.png" alt="Logo Super Ahorro">
+      <span class="login-eyebrow">BIENVENIDO A TU TIENDA</span>
+      <h1 id="loginTitle">Inicia sesión</h1>
+      <p class="login-description">Ingresa a tu cuenta para comenzar a comprar y ahorrar.</p>
+      <form id="loginForm" class="login-form">
+        <label for="loginEmail">Correo electrónico</label>
+        <input id="loginEmail" type="email" placeholder="tucorreo@ejemplo.com" autocomplete="email" required>
+        <label for="loginPassword">Contraseña</label>
+        <input id="loginPassword" type="password" placeholder="Escribe tu contraseña" autocomplete="current-password" minlength="4" required>
+        <button type="submit" class="login-submit">Ingresar a Super Ahorro <span>→</span></button>
+      </form>
+      <p class="login-demo">Demostración visual: puedes ingresar con cualquier correo y contraseña de 4 caracteres o más.</p>
+    </div>
+  </section>
+
+  <div id="appContent" class="app-locked">
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <p>¡Ahorra más en cada compra!</p>
+      <span>Ofertas especiales todos los días</span>
+    </div>
+  </header>
+
+  <header class="main-header">
+    <div class="container header-content">
+      <a class="brand" href="#" aria-label="Super Ahorro, inicio">
+        <img src="assets/logo-super-ahorro.png" alt="Logo Super Ahorro">
+      </a>
+      <form class="search" id="searchForm">
+        <input id="searchInput" type="search" placeholder="¿Qué producto buscas?" aria-label="Buscar productos">
+        <button type="submit">Buscar</button>
+      </form>
+      <button class="cart-button" id="openCart" type="button" aria-label="Abrir carrito">
+        <span class="cart-icon">🛒</span> Ver carrito <b id="cartCount">0</b>
+      </button>
+    </div>
+  </header>
+
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a href="#inicio">Inicio</a>
+      <a href="#productos">Productos</a>
+      <a href="#ofertas">Ofertas</a>
+      <a href="#nosotros">Nosotros</a>
+      <a href="#contacto">Contacto</a>
+    </div>
+  </nav>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="container hero-content">
+        <div class="hero-copy">
+          <span class="eyebrow">COMPRA INTELIGENTE</span>
+          <h1>Todo lo que necesitas,<br><em>al mejor precio.</em></h1>
+          <p>Encuentra tus productos favoritos y disfruta de grandes ahorros para tu hogar.</p>
+          <a class="primary-button" href="#productos">Comprar ahora <span>→</span></a>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="sale-circle"><small>AHORRA HASTA</small><strong>30%</strong><small>EN PRODUCTOS</small></div>
+          <div class="basket">🛍️</div>
+          <div class="spark spark-one">✦</div><div class="spark spark-two">✦</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="benefits">
+      <div class="container benefits-grid">
+        <div><span>🚚</span><section><strong>Compra fácil</strong><small>En pocos pasos</small></section></div>
+        <div><span>💰</span><section><strong>Buenos precios</strong><small>Ahorra en tu compra</small></section></div>
+        <div><span>⭐</span><section><strong>Calidad</strong><small>Productos seleccionados</small></section></div>
+      </div>
+    </section>
+
+    <section class="products-section container" id="productos">
+      <div class="section-heading">
+        <div><span class="eyebrow">NUESTRO CATÁLOGO</span><h2>Productos destacados</h2></div>
+        <p>Elige tus favoritos y agrégalos al carrito.</p>
+      </div>
+      <div class="quick-help"><span>1. Elige tus productos</span><span>2. Agrégalos al carrito</span><span>3. Revisa tu pedido</span></div>
+      <div class="filters" id="filters">
+        <button class="filter active" data-category="Todos">Todos</button>
+        <button class="filter" data-category="Abarrotes">Abarrotes</button>
+        <button class="filter" data-category="Bebidas">Bebidas</button>
+        <button class="filter" data-category="Limpieza">Limpieza</button>
+        <button class="filter" data-category="Hogar">Hogar</button>
+      </div>
+      <div class="product-grid" id="productGrid"></div>
+      <p class="empty-state" id="emptyState" hidden>No encontramos productos con esa búsqueda. Prueba con otro nombre o categoría.</p>
+      <p class="shopping-tip">💡 Consejo: usa el botón <strong>Agregar</strong> para guardar tus productos. Puedes cambiar las cantidades desde tu carrito.</p>
+    </section>
+
+    <section class="offer-banner" id="ofertas">
+      <div class="container offer-content">
+        <div><span class="eyebrow">PROMOCIÓN DE LA SEMANA</span><h2>¡Más productos,<br>más ahorro!</h2><p>Revisa nuestro catálogo y aprovecha los precios especiales.</p></div>
+        <div class="offer-stamp">SUPER<br><strong>OFERTA</strong><small>AHORRA HOY</small></div>
+      </div>
+    </section>
+
+    <section class="about container" id="nosotros">
+      <div class="about-icon">🛒</div>
+      <div><span class="eyebrow">SOBRE NOSOTROS</span><h2>Tu ahorro es nuestra prioridad.</h2><p>En Super Ahorro queremos hacer que tus compras sean sencillas, prácticas y económicas. Encuentra productos para tu día a día en un solo lugar.</p></div>
+    </section>
+  </main>
+
+  <footer id="contacto">
+    <div class="container footer-content">
+      <div><img src="assets/logo-super-ahorro.png" alt="Super Ahorro" class="footer-logo"><p>Compra inteligente, ahorro de verdad.</p></div>
+      <div><strong>Contáctanos</strong><p>Atención al cliente</p><p>superahorro@example.com</p></div>
+      <div><strong>Información</strong><a href="#productos">Catálogo</a><a href="#ofertas">Promociones</a></div>
+    </div>
+    <div class="copyright">© 2026 Super Ahorro. Todos los derechos reservados.</div>
+  </footer>
+
+  <div class="cart-toast" id="cartToast" role="status" aria-live="polite">✓ Producto agregado al carrito</div>
+  <div class="overlay" id="overlay"></div>
+  <aside class="cart-panel" id="cartPanel" aria-label="Carrito de compras" aria-hidden="true">
+    <div class="cart-heading"><h2>Mi carrito</h2><button id="closeCart" aria-label="Cerrar carrito">×</button></div>
+    <div id="cartItems" class="cart-items"><p class="cart-empty">Tu carrito está vacío.</p></div>
+    <div class="cart-bottom"><div class="total-line"><span>Total</span><strong id="cartTotal">$0.00</strong></div><button class="checkout-button" id="checkoutButton">Finalizar pedido</button><small>Demostración: no se realiza ningún pago.</small></div>
+  </aside>
+
+  <div class="modal" id="checkoutModal" role="dialog" aria-modal="true" aria-labelledby="checkoutTitle">
+    <button class="modal-close" id="closeModal" aria-label="Cerrar">×</button>
+    <div class="success-icon">✓</div>
+    <h2 id="checkoutTitle">¡Pedido preparado!</h2>
+    <p id="orderSummary">Tu pedido está listo.</p>
+    <p class="modal-note"></p>
+    <button class="primary-button" id="finishOrder">Aceptar</button>
+  </div>
+
+  </div><!-- /appContent -->
+  <script src="js/app.js"></script>
+</body>
+</html>
